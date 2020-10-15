@@ -34,7 +34,6 @@ export default{
             instructions,
             opening_hours,
             open_on_weekends,
-            
         } = request.body;
     
         const librariesRepository = getRepository(Library);
@@ -51,7 +50,7 @@ export default{
             about,
             instructions,
             opening_hours,
-            open_on_weekends,
+            open_on_weekends: open_on_weekends === 'true',
             images,
         };
 
@@ -69,7 +68,7 @@ export default{
                 })
             )
         });
-
+        
         await schema.validate(data, {abortEarly: false, });
         const library = librariesRepository.create(data);
     
