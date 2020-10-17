@@ -18,7 +18,10 @@ interface Library {
   latitude: number;
   longitude: number;
   about: string;
-  instructions: string;
+  phone: string;
+  website: string;
+  facebook: string;
+  instagram: string;
   opening_hours: string;
   open_on_weekends: boolean;
   images: Array<{
@@ -41,8 +44,8 @@ export default function LibraryDetails() {
 
   if(!library){
     return (
-      <View style={StyleSheet.container}>
-          <Text style={StyleSheet.description}>Carregando...</Text>
+      <View style={styles.container}>
+          <Text style={styles.description}>Carregando...</Text>
       </View>
     )
   }
@@ -101,7 +104,6 @@ export default function LibraryDetails() {
         <View style={styles.separator} />
 
         <Text style={styles.title}>Mais informações</Text>
-        <Text style={styles.description}>{library.instructions}</Text>
 
         <View style={styles.scheduleContainer}>
           <View style={[styles.scheduleItem, styles.scheduleItemBlue]}>
@@ -122,10 +124,23 @@ export default function LibraryDetails() {
           ) }
         </View>
 
-{/*         <RectButton style={styles.contactButton} onPress={() => {}}>
-          <FontAwesome name="whatsapp" size={24} color="#FFF" />
-          <Text style={styles.contactButtonText}>Entrar em contato</Text>
-        </RectButton> */}
+        <RectButton style={[styles.contactButton, styles.phone]} onPress={() => {}}>
+          <FontAwesome name="phone" size={24} color="#FFF" />
+          <Text style={[styles.contactButtonText, styles.contactButtonTextPhone]}>Telefone: {library.phone} </Text>
+        </RectButton>
+
+        <RectButton style={[styles.contactButton, styles.site]} onPress={() => {}}>
+          <Text style={styles.contactButtonText}><FontAwesome name="link" size={24} color="#FFF" /></Text>
+        </RectButton>
+
+        <RectButton style={[styles.contactButton, styles.facebook]} onPress={() => {}}>
+          <Text style={styles.contactButtonText}><FontAwesome name="facebook" size={24} color="#FFF" /></Text>
+        </RectButton>
+
+        <RectButton style={[styles.contactButton, styles.instagram]} onPress={() => {}}>
+          <Text style={styles.contactButtonText}><FontAwesome name="instagram" size={24} color="#FFF" /></Text>
+        </RectButton>
+
       </View>
     </ScrollView>
   )
@@ -247,19 +262,38 @@ const styles = StyleSheet.create({
   },
 
   contactButton: {
-    backgroundColor: '#3CDC8C',
     borderRadius: 20,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     height: 56,
-    marginTop: 40,
+    marginTop: 20,
   },
 
   contactButtonText: {
     fontFamily: 'Nunito_800ExtraBold',
     color: '#FFF',
     fontSize: 16,
+  },
+
+  contactButtonTextPhone:{
     marginLeft: 16,
-  }
+  },
+
+  phone:{
+    backgroundColor: '#3CDC8C',
+  },
+
+  site:{
+    backgroundColor: '#5f5f5f',
+  },
+
+  facebook:{
+    backgroundColor: '#677eb1',
+  },
+
+  instagram:{
+    backgroundColor: '#e64d92',
+  },
+
 })

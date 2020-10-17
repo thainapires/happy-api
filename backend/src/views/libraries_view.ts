@@ -9,7 +9,10 @@ export default{
             latitude: library.latitude,
             longitude: library.longitude,
             about: library.about,
-            instructions: library.instructions,
+            phone: library.phone,
+            website: library.website,
+            facebook: library.facebook,
+            instagram: library.instagram,
             opening_hours: library.opening_hours,
             open_on_weekends: library.open_on_weekends,
             images: imagesView.renderMany(library.images)

@@ -19,8 +19,17 @@ export default class Library {
     about: string;
     
     @Column()
-    instructions: string;
+    phone: string;
     
+    @Column()
+    website: string;
+
+    @Column()
+    facebook: string;
+
+    @Column()
+    instagram: string;
+
     @Column()
     opening_hours: string;
     

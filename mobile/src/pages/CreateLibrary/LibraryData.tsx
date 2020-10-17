@@ -15,7 +15,10 @@ interface LibraryDataRouteParams{
 export default function LibraryData() {
   const [name, setName] = useState('');
   const [about, setAbout] = useState('');
-  const [instructions, setInstructions] = useState('');
+  const [phone, setPhone] = useState('');
+  const [website, setWebsite] = useState('');
+  const [facebook, setFacebook] = useState('');
+  const [instagram, setInstagram] = useState('');
   const [opening_hours, setOpeningHours] = useState('');
   const [open_on_weekends, setOpenOnWeekends] = useState(true);
   const [images, setImages] = useState<string[]>([]);
@@ -31,9 +34,12 @@ export default function LibraryData() {
     const data = new FormData();
     data.append('name', name);
     data.append('about', about);
+    data.append('phone', phone);
+    data.append('website', website);
+    data.append('facebook', facebook);
+    data.append('instagram', instagram);
     data.append('latitude', String(latitude));
     data.append('longitude', String(longitude));
-    data.append('instructions', instructions);
     data.append('opening_hours', opening_hours);
     data.append('open_on_weekends', String(open_on_weekends));
     images.forEach((image, index) => {
@@ -71,7 +77,7 @@ export default function LibraryData() {
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={{ padding: 24 }}>
-      <Text style={styles.title}>Dados</Text>
+      <Text style={styles.title}>Cadastro de Biblioteca</Text>
 
       <Text style={styles.label}>Nome</Text>
       <TextInput
@@ -88,10 +94,12 @@ export default function LibraryData() {
         onChangeText={setAbout}
       />
 
-  {/*<Text style={styles.label}>Whatsapp</Text>
+      <Text style={styles.label}>Telefone</Text>
       <TextInput
         style={styles.input}
-      /> */}
+        value={phone}
+        onChangeText={setPhone}
+      />
 
       <Text style={styles.label}>Fotos</Text>
 
@@ -113,12 +121,26 @@ export default function LibraryData() {
 
       <Text style={styles.title}>Mais informações</Text>
 
-      <Text style={styles.label}>Redes Sociais</Text>
+          
+      <Text style={styles.label}>Site</Text>
       <TextInput
-        style={[styles.input, { height: 110 }]}
-        multiline
-        value={instructions}
-        onChangeText={setInstructions}
+        style={styles.input}
+        value={website}
+        onChangeText={setWebsite}
+      />
+
+      <Text style={styles.label}>Facebook</Text>
+      <TextInput
+        style={styles.input}
+        value={facebook}
+        onChangeText={setFacebook}
+      />
+
+      <Text style={styles.label}>Instagram</Text>
+      <TextInput
+        style={styles.input}
+        value={instagram}
+        onChangeText={setInstagram}
       />
 
       <Text style={styles.label}>Horario</Text>

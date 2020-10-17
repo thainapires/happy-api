@@ -98,7 +98,7 @@ export default function Library() {
 
             <hr />
 
-            <h2>Redes sociais</h2>
+            <h2>Mais informações</h2>
 
             <div className="open-details">
               <div className="hour">

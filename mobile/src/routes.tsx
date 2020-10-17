@@ -3,6 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import LibrariesMap from './pages/LibrariesMap';
+import Landing from './pages/Landing';
+
 import LibraryDetails from './pages/LibraryDetails';
 
 import SelectMapPosition from './pages/CreateLibrary/SelectMapPosition';

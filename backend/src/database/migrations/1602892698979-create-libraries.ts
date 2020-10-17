@@ -1,9 +1,8 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class createLibraries1602623849497 implements MigrationInterface {
+export class createLibraries1602892698979 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
-        //Realizar alterações: Criar tabela, criar novo campo, deletar campo
         await queryRunner.createTable(new Table({
             name: 'libraries',
             columns: [
@@ -36,7 +35,19 @@ export class createLibraries1602623849497 implements MigrationInterface {
                     type: 'text',
                 },
                 {
-                    name: 'instructions',
+                    name: 'phone',
+                    type: 'text',
+                },
+                {
+                    name: 'website',
+                    type: 'text',
+                },
+                {
+                    name: 'facebook',
+                    type: 'text',
+                },
+                {
+                    name: 'instagram',
                     type: 'text',
                 },
                 {
@@ -56,4 +67,5 @@ export class createLibraries1602623849497 implements MigrationInterface {
         //Desfazer o que foi feito up
         await queryRunner.dropTable('libraries');
     }
+
 }
