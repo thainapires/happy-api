@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
-import { FaWhatsapp } from "react-icons/fa";
 import { FiClock, FiInfo } from "react-icons/fi";
 import { Map, Marker, TileLayer } from "react-leaflet";
+import { FaPhone, FaFacebook, FaInstagram, FaLink } from "react-icons/fa";
 import api from '../services/api';
 import { useParams } from 'react-router-dom'
 
@@ -14,7 +14,10 @@ interface Library {
   longitude: number;
   name: string;
   about: string;
-  instructions: string;
+  phone: string;
+  website: string;
+  facebook: string;
+  instagram: string;
   opening_hours: string;
   open_on_weekends: string;
   images: Array<{
@@ -26,6 +29,7 @@ interface Library {
 interface LibraryParams {
   id: string;
 }
+
 
 export default function Library() {
   const params = useParams<LibraryParams>();
@@ -46,7 +50,6 @@ export default function Library() {
     <div id="page-library">
       
       <Sidebar />
-
       <main>
         <div className="library-details">
           <img src={library.images[activeImageIndex].url} alt={library.name} />
@@ -96,7 +99,6 @@ export default function Library() {
             <hr />
 
             <h2>Redes sociais</h2>
-            <p>{library.instructions}</p>
 
             <div className="open-details">
               <div className="hour">
@@ -119,10 +121,24 @@ export default function Library() {
               ) }
             </div>
 
-            {/* <button type="button" className="contact-button">
-              <FaWhatsapp size={20} color="#FFF" />
-              Entrar em contato
-              </button>*/}
+            <div className="contact-button phone">
+              <FaPhone size={20} color="#FFF" />
+              Telefone: {library.phone}
+            </div>
+
+            <div className="grid-container-links">
+            <a href={`${library.website}`} type="button" className="contact-button site border-circle">
+              <FaLink size={20} color="#FFF" className="fa-icons"/>
+            </a>
+
+            <a href={`${library.facebook}`} type="button" className="contact-button facebook border-circle">
+              <FaFacebook size={20} color="#FFF" className="fa-icons"/>
+            </a>
+
+            <a href={`${library.instagram}`} type="button" className="contact-button instagram border-circle">
+              <FaInstagram size={20} color="#FFF" className="fa-icons"/>
+            </a>
+            </div>
           </div>
         </div>
       </main>

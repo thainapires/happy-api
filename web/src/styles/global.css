@@ -12,3 +12,8 @@ body{
 body, input, button, textarea {
     font:600 18px Nunito, sans-serif;
 }
+
+.required-star{
+    color: rgb(224, 68, 68);
+    padding-left: 6px;
+}

@@ -111,6 +111,7 @@
 
 .library-details .library-details-content .open-details {
   margin-top: 24px;
+  margin-bottom: 54px;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -146,15 +147,12 @@
   color: #FF669D;
 }
 
-.library-details .library-details-content button.contact-button {
-  margin-top: 64px;
+.library-details .library-details-content .contact-button {
+  margin-top: 20px;
 
-  width: 100%;
+  width: 64px;
   height: 64px;
   border: 0;
-  cursor: pointer;
-  background: #3CDC8C;
-  border-radius: 20px;
   color: #FFFFFF;
   font-weight: 800;
 
@@ -165,10 +163,58 @@
   transition: background-color 0.2s;
 }
 
-.library-details .library-details-content button.contact-button svg {
+.library-details .library-details-content .contact-button.phone svg {
   margin-right: 16px;
 }
 
-.library-details .library-details-content button.contact-button:hover {
+.library-details .library-details-content .contact-button.border-circle {
+  border-radius: 50px;
+}
+
+.library-details .library-details-content .contact-button.phone {
+  background: #3dd187;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.library-details .library-details-content a.contact-button.site {
+  background: #5f5f5f;
+  margin-right: 10px;
+}
+
+.library-details .library-details-content a.contact-button.facebook {
+  background: #677eb1;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.library-details .library-details-content a.contact-button.instagram {
+  background: linear-gradient(154.16deg, #e64d92 7.85%, #8850a7 91.03%);
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.library-details .library-details-content .contact-button.phone:hover {
   background: #36CF82;
+}
+
+.library-details .library-details-content a.contact-button.site:hover {
+  background: #2b2b2b;
+}
+
+.library-details .library-details-content a.contact-button.facebook:hover {
+  background: #26417c;
+}
+
+.library-details .library-details-content a.contact-button.instagram:hover {
+  background: linear-gradient(154.16deg, #cc226e 7.85%, #8134af 91.03%);
+}
+
+a {
+  text-decoration:none;
+}
+
+.grid-container-links {
+  display: flex;
+  justify-content: center;
 }

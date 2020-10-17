@@ -1,5 +1,4 @@
 import Leaflet from 'leaflet';
-import { couldStartTrivia } from 'typescript';
 
 import mapMarkerImg from '../images/map-marker.svg';
 
