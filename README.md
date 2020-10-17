@@ -1,8 +1,5 @@
-# Read App
-Next Level Week 3.0 (12/10/20 - 18/10/20) - Projeto: "Read" API
-
 <h1 align="center">
-    <img alt="read" src=".github/logo.png" width="250px" />
+    <img alt="read" src="logo.png" width="250px" />
 </h1>
 
 <h4 align="center"> 
